@@ -1,18 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import ApiDataInterFace from "./apidata.interface";
 import apidataSlice from "./apidataSlice";
-
-export interface ReducerType {
-  productList: {
-    products: ApiDataInterFace[];
-  };
-}
+import hamburgerSlice from "./hamburgerSlice";
 
 
 const store = configureStore({
   reducer: {
     productList: apidataSlice.reducer,
+    hamburger: hamburgerSlice.reducer,
   }
 });
 
 export default store;
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch;

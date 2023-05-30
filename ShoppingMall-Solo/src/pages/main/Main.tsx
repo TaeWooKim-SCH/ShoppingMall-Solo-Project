@@ -1,9 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import tw from 'tailwind-styled-components';
-
-import { ReducerType } from '../../modules';
-
+import { RootState } from '../../modules';
 
 
 const MainSection = tw.section`
@@ -16,7 +14,7 @@ const MainSection = tw.section`
 `;
 
 function Main() {
-  const data = useSelector((state: ReducerType) => state.productList.products);
+  const data = useSelector((state: RootState) => state.productList.products);
 
   return (
     <MainSection>
