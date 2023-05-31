@@ -1,10 +1,16 @@
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import tw from 'tailwind-styled-components';
+import { RootState } from '../../modules';
 
-import { ReducerType } from '../../modules';
+export default function Main() {
+  const data = useSelector((state: RootState) => state.productList.products);
 
-
+  return (
+    <MainSection>
+      
+    </MainSection>
+  );
+}
 
 const MainSection = tw.section`
   w-full
@@ -14,15 +20,3 @@ const MainSection = tw.section`
   justify-center
   items-center
 `;
-
-function Main() {
-  const data = useSelector((state: ReducerType) => state.productList.products);
-
-  return (
-    <MainSection>
-      
-    </MainSection>
-  );
-}
-
-export default Main;
