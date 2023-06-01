@@ -6,6 +6,7 @@ import Login from './pages/Login/Login';
 import Main from './pages/main/Main';
 import Header from './components/Header';
 import { setData } from './modules/apidataSlice';
+import ApiDataInterFace from './modules/apidata.interface';
 
 
 function App() {
@@ -16,7 +17,10 @@ function App() {
     fetch("https://dummyjson.com/products?limit=100")
     .then(res => res.json())
     .then(data => {
-      dispatch(setData(data));
+      data.products.sort((a: ApiDataInterFace, b: ApiDataInterFace) => (
+        b.discountPercentage - a.discountPercentage
+      )); 
+      dispatch(setData(data.products));
     })
   }, [])
 
