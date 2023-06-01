@@ -15,10 +15,13 @@ const apidataSlice = createSlice({
   reducers: {
     setData: (state, action) => {
       state.products = action.payload;
-      console.log(state.products);
+    },
+    setDataElement: (state, action) => {
+      const bookmarkIndex: number = state.products.findIndex((data) => data.id === action.payload.id)
+      state.products[bookmarkIndex] = action.payload;
     },
   }
 });
 
-export const {setData} = apidataSlice.actions;
+export const {setData, setDataElement} = apidataSlice.actions;
 export default apidataSlice;
