@@ -1,11 +1,14 @@
 import {useEffect} from 'react';
 import { useDispatch } from 'react-redux/es/exports';
 import { Routes, Route, useLocation } from 'react-router-dom';
+
 import './App.css'
 import Login from './pages/Login/Login';
 import Main from './pages/main/Main';
+import Products from './pages/products/Products';
 import Header from './components/Header';
 import { setData } from './modules/apidataSlice';
+import { setCategory } from './modules/categorySlice';
 import ApiDataInterFace from './modules/apidata.interface';
 
 
@@ -21,6 +24,7 @@ function App() {
         b.discountPercentage - a.discountPercentage
       )); 
       dispatch(setData(data.products));
+      dispatch(setCategory(data.products));
     })
   }, [])
 
@@ -30,6 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/main" element={<Main />} />
+        <Route path="/product" element={<Products />} />
       </Routes>
     </>
   )
