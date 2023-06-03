@@ -23,7 +23,11 @@ const DropDownSection = tw.ul`
 
 const Li = tw.li`
   w-[100%]
+  h-[50px]
+  p-[10px]
+  rounded-[10px]
   text-center
   text-xl
   font-bold
+  hover:bg-gray-300
 `;

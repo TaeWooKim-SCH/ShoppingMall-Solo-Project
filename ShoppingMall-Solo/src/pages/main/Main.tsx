@@ -11,7 +11,7 @@ export default function Main() {
     <MainSection>
       <section className="w-[1100px] flex flex-wrap flex-col">
         <div className="text-3xl font-bold mb-[20px]">상품 리스트</div>
-        <div className="flex justify-evenly">
+        <div className="flex justify-evenly h-[400px]">
           {
             productList.length ? 
             productList.slice(0, 4).map(product => <Card data={product} key={product.id} />) :

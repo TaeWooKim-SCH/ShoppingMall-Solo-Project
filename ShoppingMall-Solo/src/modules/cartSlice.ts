@@ -3,7 +3,7 @@ import ApiDataInterFace from "./apidata.interface";
 
 const initialState: ApiDataInterFace[] = [];
 
-const CartSlice = createSlice({
+const cartSlice = createSlice({
   name: "CartSlice",
   initialState,
   reducers: {
@@ -18,5 +18,5 @@ const CartSlice = createSlice({
   }
 })
 
-export const {setCartList} = CartSlice.actions; 
-export default CartSlice
+export const {setCartList} = cartSlice.actions; 
+export default cartSlice

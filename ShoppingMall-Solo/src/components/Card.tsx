@@ -1,27 +1,27 @@
 import tw from "tailwind-styled-components";
 import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import ApiDataInterFace from "../modules/apidata.interface";
 import { setDataElement } from "../modules/apidataSlice";
 import { setCartList } from "../modules/cartSlice";
-import { RootState } from "../modules";
+import { setCategoryElement } from "../modules/categorySlice";
 import starImg from "../assets/star.png";
 
 export default function Card({ data }: propType) {
   const dispatch = useDispatch();
-  // const productList = useSelector((state: RootState) => state.productList.products);
-  // const bookmark = useSelector((state: RootState) => state.cartList);
   const discountPrice = (data.price - data.price * data.discountPercentage / 100).toFixed(1);
 
   const heartClickHandler = () => {
     if (!data.bookmark) {
       dispatch(setDataElement({...data, bookmark: true}));
-      dispatch(setCartList({...data, bookmark: true}))
+      dispatch(setCartList({...data, bookmark: true}));
+      dispatch(setCategoryElement({...data, bookmark: true}));
     }
     else {
       dispatch(setDataElement({...data, bookmark: false}));
-      dispatch(setCartList({...data, bookmark: false}))
+      dispatch(setCartList({...data, bookmark: false}));
+      dispatch(setCategoryElement({...data, bookmark: false}));
     }
   }
 
@@ -42,8 +42,16 @@ export default function Card({ data }: propType) {
         </div>
         {
           data.bookmark ?
-          <AiFillHeart className="absolute bottom-0 right-3" size="40" color="red" onClick={heartClickHandler} /> :
-          <AiOutlineHeart className="absolute bottom-0 right-3" size="40" color="red" onClick={heartClickHandler} />
+          <AiFillHeart 
+            className="absolute bottom-0 right-3 cursor-pointer"
+            size="40" color="red"
+            onClick={heartClickHandler}
+          /> :
+          <AiOutlineHeart
+            className="absolute bottom-0 right-3 cursor-pointer"
+            size="40" color="red"
+            onClick={heartClickHandler}
+          />
         }
       </div>
     </CardSection>
