@@ -10,15 +10,15 @@ export default function Main() {
   return (
     <MainSection>
       <section className="w-[1100px] flex flex-wrap flex-col">
-        <div className="text-3xl font-bold mb-[20px]">상품 리스트</div>
-        <div className="flex justify-evenly h-[400px]">
+        <div className="text-3xl font-bold mb-[30px] ml-[30px]">상품 리스트</div>
+        <div className="flex justify-evenly h-[400px] mb-[30px]">
           {
             productList.length ? 
             productList.slice(0, 4).map(product => <Card data={product} key={product.id} />) :
             <div className='mt-[100px] text-xl font-bold'>로딩중...</div>
           }
         </div>
-        <div className="text-3xl font-bold mb-[20px]">장바구니 목록</div>
+        <div className="text-3xl font-bold mb-[30px] ml-[30px]">장바구니 목록</div>
         <div className='flex justify-evenly'>
           {
             bookmarkList.length ?
