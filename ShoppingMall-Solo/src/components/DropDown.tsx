@@ -6,7 +6,7 @@ export default function DropDown() {
     <DropDownSection>
       <Link to="/mypage"><Li>마이 페이지</Li></Link>
       <Link to="/product"><Li>상품 목록</Li></Link>
-      <Link to="/cart"><Li>장바구니</Li></Link>
+      <Link to="/likes"><Li>찜 목록</Li></Link>
     </DropDownSection>
   );
 }

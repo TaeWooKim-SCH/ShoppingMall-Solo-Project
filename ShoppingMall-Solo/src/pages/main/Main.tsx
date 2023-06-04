@@ -6,7 +6,7 @@ import { RootState } from '../../modules';
 
 export default function Main() {
   const productList = useSelector((state: RootState) => state.productList.products);
-  const bookmarkList = useSelector((state: RootState) => state.cartList);
+  const bookmarkList = useSelector((state: RootState) => state.likesList);
   return (
     <MainSection>
       <section className="w-[1100px] flex flex-wrap flex-col">
@@ -18,12 +18,12 @@ export default function Main() {
             <div className='mt-[100px] text-xl font-bold'>로딩중...</div>
           }
         </div>
-        <div className="text-3xl font-bold mb-[30px] ml-[30px]">장바구니 목록</div>
+        <div className="text-3xl font-bold mb-[30px] ml-[30px]">찜 목록</div>
         <div className='flex justify-evenly'>
           {
             bookmarkList.length ?
-            bookmarkList.map((el) => <Card data={el} key={el.id} />) :
-            <div className='mt-[100px] text-xl font-bold'>장바구니가 비어 있습니다.</div>
+            bookmarkList.slice(0, 4).map((el) => <Card data={el} key={el.id} />) :
+            <div className='mt-[100px] text-xl font-bold'>찜 목록이 없습니다.</div>
           }
         </div>
       </section>
