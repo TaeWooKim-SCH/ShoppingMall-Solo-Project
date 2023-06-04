@@ -5,6 +5,7 @@ dummyJSON의 product API를 이용해 쇼핑몰 웹을 만들었습니다. TypeS
 <img src="https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=Typescript&logoColor=white"/> <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/> <img src="https://img.shields.io/badge/Redux-764ABC?style=flat-square&logo=Redux&logoColor=white"/> <img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/> <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=Vite&logoColor=white"/>
 - ```TypeScript```: 기존의 동적 타이핑만 가능했던 JavaScript 대신 정적 타이핑을 지원하는 TypeScript를 경험해보고자 사용했습니다.
 - ```Redux```: 상태 관리가 필요한 규모의 프로젝트는 아니지만 프로젝트를 하며 어떻게 적용해야 할지 경험해보고자 Redux ToolKit을 사용했습니다.
+- ```Vite```: 기존의 CRA는 번들링 과정이 있어 서버 구동시 속도가 매우 느렸습니다. 더욱 빠른 속도를 위해 Vite를 사용했습니다.
 
 ## 기획
 - ```Git Strategy```: Git Flow
