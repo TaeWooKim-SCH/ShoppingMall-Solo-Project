@@ -4,8 +4,9 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 
 import './App.css'
 import Login from './pages/Login/Login';
-import Main from './pages/main/Main';
-import Products from './pages/products/Products';
+import Main from './pages/Main/Main';
+import MyPage from './pages/MyPage/MyPage';
+import Products from './pages/Products/Products';
 import Header from './components/Header';
 import { setData } from './modules/apidataSlice';
 import { setCategory } from './modules/categorySlice';
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/main" element={<Main />} />
+        <Route path="/mypage" element={<MyPage />} />
         <Route path="/product" element={<Products />} />
       </Routes>
     </>
