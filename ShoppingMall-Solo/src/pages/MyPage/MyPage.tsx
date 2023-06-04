@@ -1,6 +1,6 @@
 import tw from "tailwind-styled-components";
 
-import Account from "../../components/account";
+import Account from "../../components/Account";
 import Asset from "../../components/Asset";
 import NHImg from '../../assets/NHImg.png';
 import SHImg from '../../assets/SHImg.png';

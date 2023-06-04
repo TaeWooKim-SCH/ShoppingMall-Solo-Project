@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 
 import ApiDataInterFace from "../modules/apidata.interface";
 import { setDataElement } from "../modules/apidataSlice";
-import { setCartList } from "../modules/cartSlice";
+import { setCartList } from "../modules/likesSlice";
 import { setCategoryElement } from "../modules/categorySlice";
 import starImg from "../assets/star.png";
 

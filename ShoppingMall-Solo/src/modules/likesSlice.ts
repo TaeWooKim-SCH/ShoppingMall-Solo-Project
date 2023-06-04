@@ -3,8 +3,8 @@ import ApiDataInterFace from "./apidata.interface";
 
 const initialState: ApiDataInterFace[] = [];
 
-const cartSlice = createSlice({
-  name: "CartSlice",
+const likesSlice = createSlice({
+  name: "likesSlice",
   initialState,
   reducers: {
     setCartList: (state, action) => {
@@ -12,11 +12,11 @@ const cartSlice = createSlice({
         return [...state, action.payload];
       }
       else {
-        return state.filter((cart) => cart.id !== action.payload.id)
+        return state.filter((like) => like.id !== action.payload.id)
       }
     }
   }
 })
 
-export const {setCartList} = cartSlice.actions; 
-export default cartSlice
+export const {setCartList} = likesSlice.actions; 
+export default likesSlice;
